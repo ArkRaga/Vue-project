@@ -1,7 +1,7 @@
 <template>
   <h1>Welcome to The Town</h1>
   <p>please choose a place to go</p>
-  <button @click="clicky">Test</button>
+  <!-- <button @click="clicky">Test</button> -->
 
   <div>
     <Buttonface :locations="locations" />
@@ -19,7 +19,7 @@ export default {
   components: { Buttonface },
   data() {
     return {
-      locations: ["Forrest", "Hunt", "Shop"],
+      locations: ["Forrest", "Hunt", "Shop", "Crafting"],
     };
   },
   methods: {

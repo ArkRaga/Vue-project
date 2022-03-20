@@ -17,6 +17,7 @@ import Forrest from "../components/Locations/Forrest.vue";
 import DefaultLocation from "../components/Locations/DefaultLocation.vue";
 import Notif from "../components/Notifs.vue";
 import { mapGetters } from "vuex";
+
 export default {
   name: "HomeView",
   props: {},

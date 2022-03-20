@@ -1,10 +1,15 @@
 {
   "Axe": {
     "id": 1,
-    "name": "Axe"
+    "name": "Axe",
+    "uses": 25
   },
   "Stick": {
     "id": 2,
     "name": "Stick"
+  },
+  "Rock": {
+    "id": 3,
+    "name": "Rock"
   }
 }

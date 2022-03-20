@@ -1,7 +1,7 @@
 export default {
   state: {
     playerLocation: "Town",
-    locations: ["Town", "Forrest", "Shop", "Hunt", "Lake"],
+    locations: ["Town", "Forrest", "Shop", "Hunt", "Lake", "Crafting"],
     prevLocation: "Town",
   },
   getters: {

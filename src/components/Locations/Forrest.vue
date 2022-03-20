@@ -9,6 +9,12 @@
         active="true"
       />
       <Card
+        @btn-click="gatherRocks"
+        title="Rocks"
+        imgName="rocks_48.png"
+        active="true"
+      />
+      <Card
         @btn-click="gatherTree"
         title="Tree"
         imgName="tree1_48.png"
@@ -51,6 +57,12 @@ export default {
     gatherTree() {
       //   console.log("you picked up a stick");
       eventSystem.invokeEvent("testNotif", "Log Gatherd");
+    },
+    gatherRocks() {
+      let i = items.Rock;
+      i.quantity = 1;
+      this.addItemToInventory(i);
+      eventSystem.invokeEvent("testNotif", "Rock Gatherd");
     },
   },
   created() {

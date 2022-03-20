@@ -1,6 +1,11 @@
 <template>
   <div>
-    <button @click="changeLocation(l)" v-for="l in locations" :key="l">
+    <button
+      class="btn-face"
+      @click="changeLocation(l)"
+      v-for="l in locations"
+      :key="l"
+    >
       {{ l }}
     </button>
   </div>
@@ -24,7 +29,21 @@ export default {
 </script>
 
 <style scope>
+.btn-face {
+  background-color: #49477a;
+  color: #c7c7c7;
+  margin: 2px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+.btn-face:hover {
+  background-color: #7572be;
+  color: #000000;
+}
 div {
-  margin: 5px;
+  margin: 10px;
 }
 </style>

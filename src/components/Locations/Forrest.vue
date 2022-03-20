@@ -19,6 +19,7 @@
         title="Tree"
         imgName="tree1_48.png"
         :active="hasAxe"
+        :notifAlert="treeAlert"
       />
     </div>
     <div>
@@ -43,6 +44,7 @@ export default {
     return {
       locations: ["back", "Lake"],
       hasAxe: false,
+      treeAlert: { type: "redNotif", msg: "Need Axe" },
     };
   },
   methods: {
@@ -52,17 +54,17 @@ export default {
       let i = items.Stick;
       i.quantity = 1;
       this.addItemToInventory(i);
-      eventSystem.invokeEvent("testNotif", "Stick Gatherd");
+      eventSystem.invokeEvent("greenNotif", "Stick Gatherd");
     },
     gatherTree() {
       //   console.log("you picked up a stick");
-      eventSystem.invokeEvent("testNotif", "Log Gatherd");
+      eventSystem.invokeEvent("greenNotif", "Log Gatherd");
     },
     gatherRocks() {
       let i = items.Rock;
       i.quantity = 1;
       this.addItemToInventory(i);
-      eventSystem.invokeEvent("testNotif", "Rock Gatherd");
+      eventSystem.invokeEvent("greenNotif", "Rock Gatherd");
     },
   },
   created() {

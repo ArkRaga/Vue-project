@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-    <div class="notif">
-      <notif />
-    </div>
     <h1>Hello :)</h1>
     <Town v-if="playerLocation === 'Town'" />
     <Forrest v-else-if="playerLocation === 'Forrest'" />
@@ -44,8 +41,5 @@ export default {
 }
 p {
   color: white;
-}
-.notif {
-  position: fixed;
 }
 </style>

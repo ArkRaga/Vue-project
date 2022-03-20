@@ -6,16 +6,21 @@
 </template>
 
 <script>
+import eventSystem from "../service/eventSystem";
 export default {
   props: {
     title: String,
     imgName: String,
     active: false,
+    notifAlert: Object,
   },
   emits: ["btn-click"],
   methods: {
     doClick() {
       if (!this.active) {
+        if (this.notifAlert) {
+          eventSystem.invokeEvent(this.notifAlert.type, this.notifAlert.msg);
+        }
         return;
       }
       this.$emit("btn-click");
@@ -32,7 +37,7 @@ div {
   width: 100px;
   text-align: center;
   cursor: pointer;
-  transition: 1s all;
+  transition: 0.2s all;
   user-select: none;
   margin: 5px;
 }
@@ -47,6 +52,6 @@ img {
   background-color: #3c6b54;
 }
 .active:active {
-  transform: scaleX(1.85) scaleY(0.75);
+  transform: scaleX(1.08) scaleY(0.85);
 }
 </style>

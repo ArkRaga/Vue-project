@@ -1,38 +1,52 @@
+import { set } from "vue";
+
 export default {
   state: {
-    inventory: [{ id: 1, name: "test_item" }],
+    inventory: {},
   },
   getters: {
     getPlayerInventory: (state) => state.inventory,
+    hasItem: (state) => (item) => {
+      if (state.inventory[item.name]) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   mutations: {
     placeIntoInventory: (state, item) => {
-      state.inventory.push(item);
+      state.inventory[item.name] = item;
     },
-    addToItemQuantity(state, item) {
-      let i = state.inventory.find((itm) => itm.id === item.id);
-      i.quantity += item.quantity;
+    addToItemQuantity: (state, item) => {
+      let i = state.inventory[item.name];
+      let newobj = {
+        id: item.idm,
+        name: item.name,
+        quantity: i.quantity + item.quantity,
+      };
+      state.inventory[item.name] = newobj;
+      console.log("Add to quantity: ", item, newobj.quantity);
     },
     removeFromItemQuantity(state, item) {
-      let i = state.inventory.find((itm) => itm.id === item.id);
-      i.quantity -= item.quantity;
+      state.inventory[item.name].quantity -= item.quantity;
     },
     removeFromInventory(state, item) {
-      state.inventory = state.inventory.filter((itm) => itm.id !== item.id);
+      delete state.inventory[item.name];
     },
   },
   actions: {
     addItemToInventory({ commit, state }, item) {
-      if (state.inventory.find((itm) => itm.id === item.id)) {
+      if (state.inventory[item.name]) {
         commit("addToItemQuantity", item);
       } else {
         commit("placeIntoInventory", item);
       }
+      // console.log("Added item: ", item);
     },
     updateItemInInventory({ commit, state }, item) {
-      let i = state.inventory.find((itm) => itm.id === item.id);
-      if (i) {
-        if (i.quantity > 1) {
+      if (state.inventory[item.name]) {
+        if (state.inventory[item.name].quantity > 1) {
           commit("removeFromItemQuantity", item);
         } else {
           commit("removeFromInventory", item);
@@ -40,7 +54,7 @@ export default {
       }
     },
     deleteItemFromInventory({ commit, state }, item) {
-      if (state.inventory.find((itm) => itm.id === item.id)) {
+      if (state.inventory[item.name]) {
         commit("removeFromInventory", item);
       }
     },

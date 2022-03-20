@@ -23,4 +23,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scope>
+div {
+  margin: 5px;
+}
+</style>

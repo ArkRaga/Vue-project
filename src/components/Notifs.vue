@@ -1,5 +1,5 @@
 <template>
-  <div v-show="active">
+  <div v-if="active">
     <h1>{{ text }}</h1>
   </div>
 </template>
@@ -35,4 +35,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+div {
+  background-color: #60ab85;
+  border-radius: 15px;
+  padding: 3px;
+  font-size: 8px;
+  /* width: 50px; */
+}
+</style>

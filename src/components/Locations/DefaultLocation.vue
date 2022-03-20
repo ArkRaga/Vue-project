@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      locations: ["Town"],
+      locations: ["Town", "back"],
     };
   },
 };

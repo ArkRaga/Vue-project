@@ -10,7 +10,7 @@
 
 <script>
 import Buttonface from "../Buttonface.vue";
-import CraftingCard from "./Cards/CraftingCard.vue";
+import CraftingCard from "../Cards/CraftingCard.vue";
 import * as craft from "../../data/crafting.json";
 import eventSystem from "@/service/eventSystem";
 export default {

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import eventSystem from "../../../service/eventSystem";
+import eventSystem from "@/service/eventSystem.js";
 export default {
 	props: {
 		title: String,

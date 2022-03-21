@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Card from "./Cards/GatheringCard.vue";
+import Card from "../Cards/GatheringCard.vue";
 import Buttonface from "../Buttonface.vue";
 import eventSystem from "../../service/eventSystem";
 import { mapGetters, mapActions } from "vuex";

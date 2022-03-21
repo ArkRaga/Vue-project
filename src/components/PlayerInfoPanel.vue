@@ -5,14 +5,19 @@
 			<button @click="changeSelection('Inventory')">Inventory</button>
 			<button @click="changeSelection('Quest')">Quest</button>
 		</div>
-		<div class="body">{{ selected }}</div>
+		<div class="body">
+			<Inventory v-if="selected === 'Inventory'" />
+		</div>
 	</div>
 </template>
 
 <script>
+import Inventory from "../components/infopanel/Inventory.vue";
 export default {
 	name: "InfoPanel",
-	components: {},
+	components: {
+		Inventory,
+	},
 	data() {
 		return {
 			selected: "Player",

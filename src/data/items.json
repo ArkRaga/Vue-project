@@ -1,15 +1,19 @@
 {
-  "Axe": {
-    "id": 1,
-    "name": "Axe",
-    "uses": 25
-  },
-  "Stick": {
-    "id": 2,
-    "name": "Stick"
-  },
-  "Rock": {
-    "id": 3,
-    "name": "Rock"
-  }
+	"Axe": {
+		"id": 1,
+		"name": "Axe",
+		"uses": 25
+	},
+	"Stick": {
+		"id": 2,
+		"name": "Stick"
+	},
+	"Rock": {
+		"id": 3,
+		"name": "Rock"
+	},
+	"Log": {
+		"id": 4,
+		"name": "Log"
+	}
 }

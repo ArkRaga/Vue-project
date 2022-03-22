@@ -2,25 +2,7 @@
 	<div>
 		<h1>The Forrest</h1>
 		<div class="card-holder">
-			<Card
-				@btn-click="gatherSticks"
-				title="Sticks"
-				imgName="stick_48.png"
-				active="true"
-			/>
-			<Card
-				@btn-click="gatherRocks"
-				title="Rocks"
-				imgName="rocks_48.png"
-				active="true"
-			/>
-			<Card
-				@btn-click="gatherTree"
-				title="Tree"
-				imgName="tree1_48.png"
-				:active="hasAxe"
-				:notifAlert="treeAlert"
-			/>
+			<Card v-for="g in gathers" :key="g.title" :gather="g" />
 		</div>
 		<div>
 			<buttonface :locations="locations" />
@@ -34,6 +16,7 @@ import Buttonface from "../Buttonface.vue";
 import eventSystem from "../../service/eventSystem";
 import { mapGetters, mapActions } from "vuex";
 import * as items from "../../data/items.json";
+import gathers from "@/data/Gather.json";
 export default {
 	name: "Forrest",
 	components: {
@@ -43,7 +26,7 @@ export default {
 	data() {
 		return {
 			locations: ["back", "Lake"],
-			hasAxe: false,
+			gathers: gathers,
 			treeAlert: { type: "redNotif", msg: "Need Axe" },
 		};
 	},

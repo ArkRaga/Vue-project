@@ -11,13 +11,12 @@
 <script>
 import Buttonface from "../Buttonface.vue";
 import CraftingCard from "../Cards/CraftingCard.vue";
-import * as craft from "../../data/crafting.json";
-import eventSystem from "@/service/eventSystem";
+import craft from "../../data/crafting.json";
 export default {
 	components: { Buttonface, CraftingCard },
 	data() {
 		return {
-			recipes: [craft.craftAxe],
+			recipes: craft,
 			locations: ["Town", "Shop", "Hunt", "Forrest", "Back"],
 		};
 	},

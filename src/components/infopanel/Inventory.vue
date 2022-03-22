@@ -25,8 +25,12 @@ export default {
 <style scoped>
 .inv {
 	color: antiquewhite;
+	background-color: #7672be;
+}
+div {
+	margin: 0;
 }
 .container {
-	padding: 2px;
+	/* padding: 2px; */
 }
 </style>

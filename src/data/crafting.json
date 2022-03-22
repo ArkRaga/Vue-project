@@ -1,8 +1,8 @@
-{
-	"craftAxe": {
+[
+	{
 		"title": "craftAxe",
 		"mat1": { "name": "Stick", "quantity": 50 },
 		"mat2": { "name": "Rock", "quantity": 50 },
 		"item": { "name": "Axe", "quantity": 1 }
 	}
-}
+]

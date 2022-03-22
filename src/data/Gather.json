@@ -1,0 +1,20 @@
+[
+	{
+		"title": "Stick",
+		"itemName": "Stick",
+		"imgName": "stick_48.png",
+		"required": false
+	},
+	{
+		"title": "Rock",
+		"itemName": "Rock",
+		"imgName": "rocks_48.png",
+		"required": false
+	},
+	{
+		"title": "Tree",
+		"itemName": "Log",
+		"imgName": "tree1_48.png",
+		"required": "Axe"
+	}
+]

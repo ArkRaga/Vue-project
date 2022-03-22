@@ -1,7 +1,7 @@
 <template>
 	<div @click="doClick" :class="active ? 'active' : 'non-active'">
-		<h3>{{ title }}</h3>
-		<img :src="require(`@/assets/${imgName}`)" alt="" />
+		<h3>{{ gather.title }}</h3>
+		<img v-if="imgName" :src="require(`@/assets/${imgName}`)" alt="" />
 	</div>
 </template>
 
@@ -9,24 +9,37 @@
 import eventSystem from "@/service/eventSystem.js";
 export default {
 	props: {
-		title: String,
-		imgName: String,
-		active: false,
-		notifAlert: Object,
+		gather: Object,
+	},
+	data() {
+		return {
+			imgName: false,
+			active: false,
+			redNotifMsg: "",
+			greenNotifMsg: "",
+		};
 	},
 	emits: ["btn-click"],
 	methods: {
 		doClick() {
 			if (!this.active) {
 				if (this.notifAlert) {
-					eventSystem.invokeEvent(this.notifAlert.type, this.notifAlert.msg);
+					eventSystem.invokeEvent("redNotif", this.redNotifMsg);
 				}
 				return;
 			}
-			this.$emit("btn-click");
 		},
 	},
-	created() {},
+	created() {
+		if (this.gather.imgName) {
+			this.imgName = this.gather.imgName;
+		}
+		if (this.gather.required) {
+			this.redNotifMsg = `you need ${this.gather.required}`;
+		} else {
+			this.active = true;
+		}
+	},
 };
 </script>
 

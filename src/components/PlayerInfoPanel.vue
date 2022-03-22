@@ -6,6 +6,7 @@
 			<button @click="changeSelection('Quest')">Quest</button>
 		</div>
 		<div class="body">
+			<h3>{{ selected }}</h3>
 			<Inventory v-if="selected === 'Inventory'" />
 		</div>
 	</div>
@@ -45,8 +46,12 @@ button {
 	height: 10%;
 }
 .body {
+	padding: 2px;
 	background-color: #4b4883;
 	border-radius: 10px;
 	height: 80%;
+}
+h3 {
+	color: white;
 }
 </style>
